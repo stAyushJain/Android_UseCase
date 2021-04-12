@@ -1,0 +1,132 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/deal_list_item"
+    android:foreground="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:paddingVertical="@dimen/item_padding">
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_30v"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.3"/>
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/iv_product"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:scaleType="fitCenter"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/guideline_30v"/>
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_title"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:maxLines="2"
+      android:ellipsize="end"
+      android:minLines="2"
+      android:textColor="@color/title_color"
+      android:textSize="@dimen/text_16sp"
+      android:layout_marginStart="@dimen/dimen_4dp"
+      app:layout_constraintVertical_chainStyle="packed"
+      app:layout_constraintStart_toEndOf="@+id/guideline_30v"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/view_divider"
+      tools:text="Amazing Teen Fit Slim T-Shirt" />
+
+  <View
+      android:id="@+id/view_divider"
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:background="@color/divider_color"
+      android:layout_marginTop="@dimen/dimen_2dp"
+      app:layout_constraintStart_toStartOf="@+id/tv_title"
+      app:layout_constraintTop_toBottomOf="@id/tv_title"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/cl_size"/>
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_price"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
+      app:layout_constrainedWidth="true"
+      android:maxLines="1"
+      android:ellipsize="end"
+      android:textSize="@dimen/text_16sp"
+      android:textColor="@color/add_list"
+      android:gravity="center_vertical"
+      app:layout_constraintVertical_bias="0"
+      app:layout_constraintHorizontal_chainStyle="spread_inside"
+      app:layout_constraintStart_toStartOf="@+id/tv_title"
+      app:layout_constraintTop_toTopOf="@id/cl_size"
+      app:layout_constraintEnd_toStartOf="@+id/cl_size"
+      app:layout_constraintBottom_toBottomOf="@+id/cl_size"
+      tools:text="$12.00" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/cl_size"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constrainedWidth="true"
+      android:layout_marginTop="@dimen/dimen_6dp"
+      app:layout_constraintStart_toEndOf="@+id/tv_price"
+      app:layout_constraintTop_toBottomOf="@id/view_divider"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_ship"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="@dimen/text_12sp"
+      android:maxLines="1"
+      android:ellipsize="end"
+      android:text="@string/ship"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/tv_or"
+      app:layout_constraintBottom_toBottomOf="parent"
+      tools:text="ship"/>
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_or"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="@dimen/text_12sp"
+      android:textColor="@color/or_color"
+      android:text="@string/or"
+      android:layout_marginHorizontal="@dimen/dimen_2dp"
+      app:layout_constraintStart_toEndOf="@+id/tv_ship"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/tv_aisle"
+      app:layout_constraintBottom_toBottomOf="parent"
+      tools:text="or"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_aisle"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:padding="@dimen/dimen_1dp"
+        android:textSize="@dimen/text_12sp"
+        android:textStyle="bold"
+        android:textColor="@color/b_color"
+        app:layout_constraintDimensionRatio="w, 1:1"
+        android:gravity="center"
+        android:maxLines="1"
+        android:background="@drawable/circle"
+        app:layout_constraintStart_toEndOf="@+id/tv_or"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="B1"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

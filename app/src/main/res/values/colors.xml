@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">@color/red_color</color>
+  <color name="colorPrimaryDark">#AA0000</color>
+  <color name="colorAccent">#008300</color>
+
+  <color name="gray_color">#666666</color>
+  <color name="red_color">#cc0000</color>
+
+  <color name="title_color">#4b4b4b</color>
+  <color name="divider_color">#e1e0e1</color>
+  <color name="item_divide">#dcdddc</color>
+  <color name="ship_color">#4b4b4b</color>
+  <color name="or_color">#e6e7e7</color>
+  <color name="b_color">#d41f1e</color>
+  <color name="white">#FFFFFF</color>
+
+
+  <color name="Reg_color">#999999</color>
+  <color name="d_desc_color">#1c1919</color>
+  <color name="add_list">#414140</color>
+</resources>
