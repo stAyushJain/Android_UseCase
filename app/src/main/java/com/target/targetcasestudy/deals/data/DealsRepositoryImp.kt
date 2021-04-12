@@ -15,10 +15,10 @@ class DealsRepositoryImp @Inject constructor(
         return dealsServices.getDeals().map {
             if (it.isSuccessful) {
                 DealResult.Success<List<DealModel>>(dealsServiceMapper.mapToDomainList(it.body()))
-            } else DealResult.Error<List<DealModel>>("Handle Error, error is ${it.errorBody().toString()}")
+            } else DealResult.Error<List<DealModel>>(it.errorBody().toString())
         }.onErrorReturn {
             // TODO("Handle All Error Case based on @Throwable")
-            DealResult.Error<List<DealModel>>("Ooops Something Went Wrong")
+            DealResult.Error<List<DealModel>>("Oops Something Went Wrong")
         }
     }
 
@@ -26,10 +26,10 @@ class DealsRepositoryImp @Inject constructor(
         return dealsServices.getDealDeatils(id).map {
             if (it.isSuccessful && it.body() != null) {
                 DealResult.Success<DealModel>(dealsServiceMapper.mapToDomain(it.body()!!))
-            } else DealResult.Error<DealModel>("Handle Error, error is ${it.errorBody().toString()}")
+            } else DealResult.Error<DealModel>(it.errorBody().toString())
         }.onErrorReturn {
             // TODO("Handle All Error Case based on @Throwable")
-            DealResult.Error<DealModel>("Ooops Something Went Wrong")
+            DealResult.Error<DealModel>("Oops Something Went Wrong")
         }
     }
 }
